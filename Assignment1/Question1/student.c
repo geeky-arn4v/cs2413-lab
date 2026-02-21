@@ -14,6 +14,8 @@
 //Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
 
 void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n) { 
+    (void)nums1Size; // Silences the "unused parameter" error
+    (void)nums2Size; // Silences the "unused parameter" error
     int i = m - 1;         // last valid element in nums1
     int j = n - 1;         // last element in nums2
     int k = m + n - 1;     // fill position from the end of nums1
