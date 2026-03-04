@@ -125,11 +125,7 @@ Command to test:
 
 # General Instructions
 
-Compile and run default (Question 1):
-
-    make
-
-Run specific question:
+Compile and Run specific question:
 
     make run1
     make run2
