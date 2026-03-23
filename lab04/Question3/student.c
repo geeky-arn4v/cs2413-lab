@@ -55,7 +55,20 @@ struct TreeNode {
     struct TreeNode *right;
 };
 
+static int sumPath(struct TreeNode *node, int current) {
+    if (node == NULL) {
+        return 0;
+    }
+
+    int next = current * 10 + node->val;
+
+    if (node->left == NULL && node->right == NULL) {
+        return next;
+    }
+
+    return sumPath(node->left, next) + sumPath(node->right, next);
+}
 
 int sumNumbers(struct TreeNode* root) {
-      // TODO: implement
+    return sumPath(root, 0);
 }
