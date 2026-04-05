@@ -11,9 +11,20 @@
 
 
 int count_isolated(Graph* g) {
-    // TODO: implement
-    // return -1;
-   
+    int count = 0;
+    for (int i = 0; i < MAX_NODES; i++) {
+        int has_edge = 0;
+        for (int j = 0; j < MAX_NODES; j++) {
+            if (g->adj[i][j] != 0) {
+                has_edge = 1;
+                break;
+            }
+        }
+        if (!has_edge) {
+            count++;
+        }
+    }
+    return count;
 }
 
 
