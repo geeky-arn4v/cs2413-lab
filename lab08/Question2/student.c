@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-
 /*
 Question 2: Find the Index of the First Occurrence in a String
 
@@ -22,6 +19,18 @@ Note:
 */
 
 int strStr(char* haystack, char* needle) {
-    // TODO: implement
-
+    if (needle[0] == '\0') {
+        return 0;
+    }
+    for (int i = 0; haystack[i] != '\0'; i++) {
+        int j = 0;
+        while (haystack[i + j] != '\0' && needle[j] != '\0' &&
+               haystack[i + j] == needle[j]) {
+            j++;
+        }
+        if (needle[j] == '\0') {
+            return i;
+        }
+    }
+    return -1;
 }

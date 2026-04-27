@@ -20,9 +20,25 @@ Notes:
 - Do not use any built-in sorting function.
 */
 
-void selectionSort(int arr[], int size) {
-    // TODO: implement selection sort
-    (void)arr;
-    (void)size;
+static void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
 }
 
+void selectionSort(int arr[], int size) {
+    if (size <= 1) {
+        return;
+    }
+    for (int i = 0; i < size - 1; i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < size; j++) {
+            if (arr[j] < arr[minIdx]) {
+                minIdx = j;
+            }
+        }
+        if (minIdx != i) {
+            swap(&arr[i], &arr[minIdx]);
+        }
+    }
+}

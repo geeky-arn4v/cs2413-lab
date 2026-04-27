@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stddef.h>
 #include <stdbool.h>
 
 /*
@@ -24,6 +24,20 @@ Hint:
 */
 
 bool isSubsequence(char* s, char* t) {
-    // TODO: implement
-
+    if (s == NULL || t == NULL) {
+        return false;
+    }
+    if (s[0] == '\0') {
+        return true;
+    }
+    int i = 0;
+    for (; t[0] != '\0'; t++) {
+        if (t[0] == s[i]) {
+            i++;
+            if (s[i] == '\0') {
+                return true;
+            }
+        }
+    }
+    return false;
 }
